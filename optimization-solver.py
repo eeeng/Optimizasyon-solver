@@ -1,122 +1,57 @@
-from scipy.optimize import minimize
+#i
+var='k' or 'k1'
 
-var1 = 'C'
-var2 = 'F'
-mylist = {var1, var2}
+N=[1,2,3]
 
-var3 = 'N'
+cost = lambda C,F: 10000//C * 2 * F * 100
 
-
-list_cf=[(50,4), (100,8), (1000,8), (2000,3), (100,6), (10000,4)]
-
-i=[1,2,3,4,5]
-
-
+#ii 
+def transCost(C,F):
+    cost(C, F)
+   
+    def transCost2(C,F):
+        print(f"{C} {F} \ncost={cost}")
+        return cost
     
-def tasimaMaliyeti(C,F):
-    cost = (10000 / C) * F * 2 * 100
     return cost
-
-def tasimaMaliyeti2(C,F):
-    cost = (10000 / C) * F * 2 * 100
-    print("{C} {F} \ncost={cost}".format("C, F"))
-    return cost
-
-
-# input("C:")
-# input("F:")
-
-cost = lambda C,F: (10000 // C) * F * 2 * 100
-   
-# print(cost(10000,4), cost(2000, 3), cost(1000, 8), cost(100, 6), cost(50, 4))
-#min değer {ii} için 3000 
-
-print("results= ","\n",
-      'cost(2000, 3): {}'.format(cost(2000, 3)),"\n", 
-      'cost(100, 6): {}'.format(cost(100, 6)),"\n",
-      'cost(10000, 4): {}'.format(cost(1000, 4)
-                                  ))
-#bu ifadeler için de seçim yapılabilirdi ama net görmek için tekrarladndı
-
-Cx1=1000; Fx1=8
-Cx2=50;   Fx2=4
-Cx3=10000;Fx3=4
-
-
-
-while(1):
-    # kisitlamamak icin kapatildi
-    # a= input("a:")
-    # if (a == 1):
-    #     print("basla")     
-   
-        if i[2] == 3:
-            def tasimaMaliyeti(s_list):
-                
-                print( s_list,  cost(10000, 4), "\n" ,
-                      "{} {}".format(Cx3, Fx3) 
-                      )
         
-                return
+print("cost = 10000 / C * 2 * F * 100")
+
+while(1):    
+    for k in N:    
+        if N[0] == 1:
+            cost0 = cost(10000,4)
+            print("", k,"\t \t", cost0, "\n",
+                  "{} {}".format(10000, 4))
+          
+               
+        if N[1] == 2:
+            k+=1
+            cost1 = cost(2000, 3)
+            print("", k, "\t \t", "{} {}".format(2000, 3), "\n",
+                  "{} {}".format(1000,8), "",cost1, "\n",
+                  "{} {}".format(2000,3))
             
+         
+        if N[2] == 3:
+            k+=1
+            cost2 = cost(100, 6)
+            print("", k , "\t \t", "{} {}".format(100, 6), "\n",
+                  "{} {}".format(50, 4), "\t", cost2, "\n", 
+                  "{} {}".format(100, 8) , "\n",
+                  "{} {}".format(100, 6))
+#iii
+            input("N: ")
+            if N[0] == 1:                
+                cost0 = cost(10000,4)
+                print("", N[0],"\t \t", cost0, "\n",
+                      "{} {}".format(10000, 4))
+            input("N: ")        
+            if N[1] == 2:                
+                print("", N[1], "\t \t", "{} {}".format(2000, 3), "\n",
+                      "{} {}".format(1000,8), "",cost1, "\n",
+                      "{} {}".format(2000,3))
+
             
-        s_list = [i[0]]
-        # print("Fonksiyon çağrılmadan önce list: ", mylist)
-        tasimaMaliyeti(s_list)
-    
-        
-        #ii
-        if i[0]==1:
-            
-            def minimum(C,F):
-                cost(2000, 3)
-                return minimize
-            # minimum(2000,3)
-            def tasimaMaliyeti(s_list):
-                
-                s_list.append(list_cf[3])
-                print( s_list , "\n" ,"{} {}".format(Cx1, Fx1),
-                      cost(2000, 3) , "\n",
-                      "{} {}".format(2000, 3))
-                return
-            
-            
-        s_list = [i[1]]
-        # print("Fonksiyon çağrılmadan önce list: ", mylist)
-        tasimaMaliyeti(s_list)
-        
-        #iii
-        if i[1]==2:
-            
-        
-            def tasimaMaliyeti(s_list):
-                
-                s_list.append(list_cf[4])
-                print( s_list , "\n" ,"{} {}".format(Cx2, Fx2),
-                      cost(100, 6) , "\n", 
-                      "{} {}".format(100, 8) , "\n",
-                      "{} {}".format(100, 6))
-                return
-            
-            def tasimaMaliyeti2(s1_list):
-                if var3 == 1:
-                    s1_list.append(cost(10000,4))
-                
-                else:
-                    s1_list.append(cost(2000, 3))
-                return
-            s1_list = [i[0]]
-            
-        s_list = [i[2]]
-        
-        tasimaMaliyeti2(s1_list)
-        tasimaMaliyeti(s_list)
-    # else:
-    #     print("islem yok")
-   
-        # kisitlamamak icin kapatildi
-        # a= input("a:")
-        # if (a == 0):
-        #     print("islem yapma") 
-        
- 
+            break
+    break
